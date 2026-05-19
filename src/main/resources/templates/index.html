@@ -228,6 +228,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Disease</th>
+<th>Action</th>
         </tr>
 
         <tr th:each="patient : ${patients}">
@@ -237,6 +238,17 @@
             <td th:text="${patient.name}"></td>
 
             <td th:text="${patient.disease}"></td>
+
+<td>
+
+    <a th:href="@{'/deletePatient/' + ${patient.id}}"
+       class="btn btn-danger btn-sm">
+
+        Delete
+
+    </a>
+
+</td>
 
         </tr>
 

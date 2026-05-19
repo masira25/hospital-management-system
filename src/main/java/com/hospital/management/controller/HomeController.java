@@ -62,4 +62,12 @@ public String deleteDoctor(@PathVariable Long id) {
 
     return "redirect:/";
 }
+
+@GetMapping("/deletePatient/{id}")
+public String deletePatient(@PathVariable Long id) {
+
+    patientRepo.deleteById(id);
+
+    return "redirect:/";
+}
 }
