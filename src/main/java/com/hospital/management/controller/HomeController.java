@@ -1,12 +1,18 @@
 package com.hospital.management.controller;
 
-import com.hospital.management.entity.*;
-import com.hospital.management.repository.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.hospital.management.entity.Appointment;
+import com.hospital.management.entity.Doctor;
+import com.hospital.management.entity.Patient;
+import com.hospital.management.repository.AppointmentRepository;
+import com.hospital.management.repository.DoctorRepository;
+import com.hospital.management.repository.PatientRepository;
 
 @Controller
 public class HomeController {
@@ -48,4 +54,12 @@ public class HomeController {
         appointmentRepo.save(appointment);
         return "redirect:/";
     }
+
+    @GetMapping("/deleteDoctor/{id}")
+public String deleteDoctor(@PathVariable Long id) {
+
+    doctorRepo.deleteById(id);
+
+    return "redirect:/";
+}
 }
