@@ -24,9 +24,49 @@
 
     </div>
 
-    <h1 class="text-center mb-4 text-primary">
+<h1 class="text-center mb-4 text-primary">
     Hospital Management System
 </h1>
+
+<div class="row mb-4">
+
+    <div class="col-md-4">
+
+        <div class="card bg-primary text-white p-3 shadow rounded-4 border-0">
+
+            <h4>Total Doctors</h4>
+
+            <h2 th:text="${#lists.size(doctors)}"></h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card bg-success text-white p-3 shadow rounded-4 border-0">
+
+            <h4>Total Patients</h4>
+
+            <h2 th:text="${#lists.size(patients)}"></h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card bg-danger text-white p-3 shadow rounded-4 border-0">
+
+            <h4>Total Appointments</h4>
+
+            <h2 th:text="${#lists.size(appointments)}"></h2>
+
+        </div>
+
+    </div>
+
+</div>
 
     <div class="row">
 
