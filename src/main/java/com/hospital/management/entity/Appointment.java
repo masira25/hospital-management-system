@@ -1,6 +1,9 @@
 package com.hospital.management.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Entity
@@ -16,6 +19,8 @@ public class Appointment {
     private String doctorName;
 
     private String appointmentDate;
+
+    private String appointmentTime;
 
     private String status;
 }
