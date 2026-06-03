@@ -78,4 +78,22 @@ public String deleteAppointment(@PathVariable Long id) {
 
     return "redirect:/";
 }
+
+@GetMapping("/editDoctor/{id}")
+public String editDoctor(@PathVariable Long id, Model model) {
+
+    Doctor doctor = doctorRepo.findById(id).orElse(null);
+
+    model.addAttribute("doctor", doctor);
+
+    return "editDoctor";
+}
+
+@PostMapping("/updateDoctor")
+public String updateDoctor(Doctor doctor) {
+
+    doctorRepo.save(doctor);
+
+    return "redirect:/";
+}
 }

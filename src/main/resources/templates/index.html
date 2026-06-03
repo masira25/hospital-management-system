@@ -193,7 +193,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Specialization</th>
-<th>Action</th>
+<th>Actions</th>
         </tr>
 
         <tr th:each="doctor : ${doctors}">
@@ -206,12 +206,15 @@
 
 <td>
 
-    <a th:href="@{'/deleteDoctor/' + ${doctor.id}}"
-       class="btn btn-danger btn-sm">
+    <a th:href="@{'/editDoctor/' + ${doctor.id}}"
+   class="btn btn-warning btn-sm">
+    Edit
+</a>
 
-        Delete
-
-    </a>
+<a th:href="@{'/deleteDoctor/' + ${doctor.id}}"
+   class="btn btn-danger btn-sm">
+    Delete
+</a>
 
 </td>
 
@@ -228,7 +231,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Disease</th>
-<th>Action</th>
+s
         </tr>
 
         <tr th:each="patient : ${patients}">
@@ -265,7 +268,7 @@
             <th>Doctor</th>
             <th>Date</th>
             <th>Status</th>
-<th>Action</th>
+<th>Actions</th>
         </tr>
 
         <tr th:each="appointment : ${appointments}">
